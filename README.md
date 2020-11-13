@@ -55,8 +55,31 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 * ¿Por qué es necesario crear un Storage Account de la mano de un Function App?
 
+    - Porque el Storage Account nos proporciona un espacio de nombres unico para poder almacenar todos los datos
+provenientes de Azure Storage, y sean accesiles a través de HTTP
 
 * ¿Cuáles son los tipos de planes para un Function App?, ¿En qué se diferencias?, mencione ventajas y desventajas de cada uno de ellos.
+
+    - Existen tres tipos de planes para un Function App:
+    
+        1. Plan Consumo: Cuando usa el plan de consumo, las instancias del host de Azure Functions se agregan y quitan dinámicamente según la cantidad de eventos entrantes. Este plan sin servidor se escala automáticamente y se le cobra por los recursos informáticos solo cuando sus funciones están en ejecución.
+        
+            - Pague solo cuando sus funciones se estén ejecutando
+            - Escale automáticamente, incluso durante períodos de alta carga
+        
+        2. Plan Premiun: El plan Premium de Azure Functions ofrece a los clientes las mismas características y el mismo mecanismo de escalado que se utilizan en el plan Consumos in arranque en frío, con rendimiento mejorado y acceso a VNET. El plan Premium de Azure Functions se factura según el volumen de vCPU y memoria que consumen las funciones.
+        
+            - Instancias perpetuamente calientes para evitar cualquier arranque en frío
+            - Conectividad de red virtual
+            - Duración de ejecución ilimitada (60 minutos garantizados)
+            - Tamaños de instancia premium (instancias de un núcleo, dos núcleos y cuatro núcleos)
+            - Precios más predecibles
+            - Asignación de aplicaciones de alta densidad para planes con aplicaciones de múltiples funciones
+        
+        3. Plan de Azure App Service: Sus aplicaciones de función también pueden ejecutarse en las mismas máquinas virtuales dedicadas que otras aplicaciones de App Service (SKU básicas, estándar, premium y aisladas).
+            
+            - Tiene máquinas virtuales infrautilizadas existentes que ya están ejecutando otras instancias de App Service.
+            - Desea proporcionar una imagen personalizada en la que ejecutar sus funciones.
 
 
 * ¿Por qué la memoization falla o no funciona de forma correcta?
