@@ -1,4 +1,17 @@
 var bigInt = require("big-integer");
+
+men = []
+function memory(n){
+    if (men[n]!= null){
+        return men[n];
+    }
+    else {
+        men[n] = memory(n-1).add(memory(n-2));
+        return men[n]
+    }
+
+}
+
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 
@@ -14,11 +27,12 @@ module.exports = async function (context, req) {
     else if (nth === 1)
         answer = nth_1
     else {
-        for (var i = 0; i < nth - 1; i++) {
+       /* for (var i = 0; i < nth - 1; i++) {
             answer = nth_2.add(nth_1)
             nth_2 = nth_1
             nth_1 = answer
-        }
+        }*/
+        answer = memory(nth);
     }
 
     context.res = {
