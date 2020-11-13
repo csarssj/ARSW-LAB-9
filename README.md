@@ -86,6 +86,13 @@ provenientes de Azure Storage, y sean accesiles a través de HTTP
 
 
 * ¿Cómo funciona el sistema de facturación de las Function App?
-
+    
+    - El plan de consumo de Azure Functions se factura en función del consumo de recursos y las ejecuciones por segundo pero esto puede variar según el plan:
+        
+        1. Plan Consumo: Solo se le cobrará por el tiempo que se ejecute la aplicación de funciones. Este plan incluye una concesión gratuita por suscripción.
+        
+        2. Plan Premiun: Proporciona las mismas características y mecanismo de escalado que el plan de consumo, pero con un rendimiento mejorado y acceso a redes virtuales. El costo se basa en el plan de tarifa elegido. Para más información, consulte Plan Premium de Azure Functions.
+        
+        3. Plan de Azure App Service: Cuando necesite ejecutar en máquinas virtuales dedicadas o en aislamiento, utilice imágenes personalizadas o quiera usar el exceso de capacidad del plan de App Service. Usa la facturación del plan de App Service regular. El costo se basa en el plan de tarifa elegido
 
 * Informe
